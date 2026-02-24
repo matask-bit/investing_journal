@@ -1,56 +1,85 @@
-📈 Tracking Journal
+Tracking Journal
 
-Tracking Journal is a simple day trading and investing journal designed to help traders track their trades, monitor performance, and analyze profits over time.
+A simple full-stack trading journal application that allows users to record trades, track performance, and review historical results.
 
-It allows you to log trades, review historical performance, and gain insights into your trading behavior so you can improve consistency and profitability.
+The focus of this project was implementing structured trade recording with backend validation and reliable profit/loss aggregation.
 
-🚀 Features
+Tech Stack
 
-📊 Record trades (entry, exit, profit/loss)
-
-💰 Track total profits and losses
-
-📅 Review historical trades
-
-📈 Monitor performance over time
-
-🧠 Improve trading discipline with structured tracking
-
-🛠 Tech Stack
+Backend:
 
 Python
 
-(Add Flask / FastAPI / CLI if applicable)
+(Flask / FastAPI – specify which)
 
-SQLite (if you’re using it)
+SQLite (or your DB)
 
-📦 Installation
-git clone https://github.com/your-username/tracking_journal.git
-cd tracking_journal
-pip install -r requirements.txt
-▶️ Usage
-python app.py
+Frontend:
 
-(Adjust if needed.)
+Basic UI for trade input and review
 
-🎯 Purpose
+Core Functionality
 
-The goal of this project is to:
+Users can:
 
-Help traders stay disciplined
+Add a trade (entry price, exit price, position size)
 
-Track performance metrics
+Automatically calculate profit or loss
 
-Identify strengths and weaknesses
+View trade history
 
-Make data-driven trading decisions
+View aggregated total performance
 
-📌 Future Improvements
+All calculations are performed server-side.
 
-Performance analytics dashboard
+Data Validation & Integrity
 
-Risk/reward tracking
+The backend enforces:
 
-Export to CSV
+Entry and exit prices must be positive
 
-Trade statistics visualization
+Position size must be greater than zero
+
+Profit/loss calculated from stored values
+
+Trades persisted in SQL database
+
+No manual editing of computed profit values
+
+Aggregation logic (total P/L) is derived from stored trades rather than client input.
+
+What This Project Demonstrates
+
+SQL data persistence
+
+Backend validation logic
+
+Derived field calculation
+
+Basic financial aggregation
+
+Separation between UI and business logic
+
+REST-based interaction (if applicable)
+
+Example Edge Cases Considered
+
+Negative prices
+
+Zero position size
+
+Extremely large trade values
+
+Invalid numeric input
+
+Empty database aggregation
+
+Future Improvements
+
+Risk/reward metrics
+
+Performance visualization
+
+Export functionality
+
+Advanced analytics
